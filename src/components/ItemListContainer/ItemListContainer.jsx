@@ -23,7 +23,7 @@ export const ItemListContainer = () => {
     }, [categoryId])
 
     return (<section className="container">
-        <h1>Bienvenidos</h1>
+        <h1>Bienvenidos a Planeta Creativo</h1>
         <ItemList list={products} />
     </section>);
 }
