@@ -7,7 +7,7 @@ export const Nav = () => {
   
   return (
     <nav className="navbar">
-      <img src="images/logo.png" alt="Planeta Creativo" className="logo-img" />
+      <img src="/images/logo.png" alt="Planeta Creativo" className="logo-img" />
       <ul className="nav-list">
         <li> <Link to={"/"}>Home</Link> </li>
         <li> <Link to={"/category/stickers"}>Stickers</Link> </li>
