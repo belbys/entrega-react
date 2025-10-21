@@ -14,6 +14,15 @@
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
+.cart-empty {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    /* asegurá contraste */
+    opacity: 1;
+    /* por si estaba bajita */
+}
+
 .cart-title {
     font-size: 1.8rem;
     font-weight: 700;
