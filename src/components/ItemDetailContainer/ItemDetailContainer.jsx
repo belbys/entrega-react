@@ -1,0 +1,35 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
+
+export const ItemDetailContainer = () => {
+    const [detail, setDetail] = useState({});
+    const { id } = useParams();
+
+    useEffect(() => {
+        fetch("/data/products.json")
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error("Producto no encontrado");
+                }
+                return res.json();
+            })
+            .then((data) => {
+                const found = data.find(prod => prod.id === id);
+                if (found) {
+                    setDetail(found);
+                } else {
+                    throw new Error("Producto no encontrado")
+                }
+            })
+            .catch(() => { });
+    }, [id]);
+
+    return (
+        <section className="container">
+            <h1>Detalle del producto</h1>
+            {detail ? <ItemDetail detail={detail} /> : <p>Cargando ....</p>}
+        </section>
+    )
+
+}
